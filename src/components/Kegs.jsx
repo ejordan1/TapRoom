@@ -1,27 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Item(props){
+function Keg(props){
   var imgStyle = () => {
     return  {
       height: '150',
       width : '190',
       border : "5px",
       borderStyle : "solid",
-      color : "red",
-      backgroundColor : "white"
+      color : "brown",
+      backgroundColor : "tan"
      
     };
   };
 
-  var itemStyle = () => {
+  var KegStyle = () => {
     return  {
             
       border : "5px",
       borderStyle : "solid",
-      color : "red",
+      borderColor: "brown",
+      color : "white",
       width : "200px",
-      backgroundColor : "yellow",
+      backgroundColor : "#b3814b",
       display : "inline-block",
       height: "400px",
       margin : "5px"
@@ -30,7 +31,7 @@ function Item(props){
 
   
   return (
-    <div style = {itemStyle()}>
+    <div style = {KegStyle()}>
       <img style = {imgStyle()} src={props.imgurl} alt = {`img of ${props.name}`}/>
       <h4>{props.name}</h4>
       <h5>{props.brand}</h5>
@@ -42,7 +43,7 @@ function Item(props){
   );
 }
 
-Item.PropTypes= {
+Keg.PropTypes= {
   name: PropTypes.string.isRequired,
   brand: PropTypes.string,
   alcoholContent: PropTypes.number,
@@ -51,4 +52,4 @@ Item.PropTypes= {
   pintsLeft: PropTypes.number,
 };
 
-export default Item;
+export default Keg;

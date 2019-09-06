@@ -1,5 +1,5 @@
 import React from 'react';
-import Items from './Items';
+import Kegs from './Kegs';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -10,13 +10,13 @@ function Beer(props){
   return (
     <div>
       <Link style = {titleStyle()} to={`/${props.name}`}>{props.name}</Link> 
-      {props.items.map((item, index) =>
-        <Items name={item.name}
-          brand={item.brand}
-          alcoholContent={item.alcoholContent}
-          price={item.price}
-          imgurl={item.imgurl}
-          pintsLeft={item.pintsLeft}
+      {props.Kegs.map((Keg, index) =>
+        <Kegs name={Keg.name}
+          brand={Keg.brand}
+          alcoholContent={Keg.alcoholContent}
+          price={Keg.price}
+          imgurl={Keg.imgurl}
+          pintsLeft={Keg.pintsLeft}
           key={index}/>
                 
       )}
@@ -27,7 +27,7 @@ function Beer(props){
 Beer.PropTypes= {
   name: PropTypes.string.isRequired,
   // imgurl: PropTypes.string,
-  items: PropTypes.array
+  Kegs: PropTypes.array
 };
 
 

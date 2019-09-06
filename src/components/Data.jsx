@@ -1,6 +1,6 @@
 import React from 'react';
 
-var Items = {
+var Kegs = {
   apple : {
     name : 'Apple',
     brand : 'Rainier',
@@ -89,19 +89,19 @@ function GetBeerData()
     return BeerData = {
     spring : {
         name: 'Spring',
-        items: [Items.flowers, Items.tomato, Items.strawberries, Items.peach, Items.banana]
+        Kegs: [Kegs.flowers, Kegs.tomato, Kegs.strawberries, Kegs.peach, Kegs.banana]
     },
     summer : {
         name: 'Summer',
-        items: [Items.tomato, Items.banana, Items.strawberries, Items.orange]
+        Kegs: [Kegs.tomato, Kegs.banana, Kegs.strawberries, Kegs.orange]
     },
     fall : {
         name: 'Fall',
-        items: [Items.squash, Items.pumpkin, Items.apple,  Items.banana]
+        Kegs: [Kegs.squash, Kegs.pumpkin, Kegs.apple,  Kegs.banana]
     },
     winter : {
         name: 'Winter',
-        items: [ Items.banana, Items.cranberries, Items.pumpkin]
+        Kegs: [ Kegs.banana, Kegs.cranberries, Kegs.pumpkin]
     }
 
     };
@@ -112,19 +112,19 @@ function GetBeerDataArr()
     return [
     {
         name: 'Spring',
-        items: [Items.flowers, Items.tomato, Items.strawberries, Items.peach, Items.banana]
+        Kegs: [Kegs.flowers, Kegs.tomato, Kegs.strawberries, Kegs.peach, Kegs.banana]
     },
     {
         name: 'Summer',
-        items: [Items.tomato, Items.banana, Items.strawberries, Items.orange]
+        Kegs: [Kegs.tomato, Kegs.banana, Kegs.strawberries, Kegs.orange]
     },
     {
         name: 'Fall',
-        items: [Items.squash, Items.pumpkin, Items.apple,  Items.banana]
+        Kegs: [Kegs.squash, Kegs.pumpkin, Kegs.apple,  Kegs.banana]
     },
     {
         name: 'Winter',
-        items: [ Items.banana, Items.cranberries, Items.pumpkin]
+        Kegs: [ Kegs.banana, Kegs.cranberries, Kegs.pumpkin]
     }
 ]
 }

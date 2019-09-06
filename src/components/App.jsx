@@ -3,40 +3,40 @@ import { Switch, Route } from 'react-router-dom';
 import Schedule from './Schedule';
 import HomePage from './HomePage';
 import Header from './Header';
-import BeersList from './BeersList';
+import BeerCategoryList from './BeerCategoryList';
 import PropTypes from 'prop-types';
 import GetBeerDataArr from './Data';
-import Beers from './Beers';
+import BeerCategory from './BeerCategory';
 function App(){
   return(
     <div>
       <Header/>
       <Switch>
         <Route exact path='/' component={HomePage} />
-        <Route exact path='/Beerslist' component={BeersList} />
+        <Route exact path='/BeerCategorylist' component={BeerCategoryList} />
         <Route exact path='/schedule' component={Schedule} />
         <Route exact path='/spring' 
-        render = {(props) => <Beers 
+        render = {(props) => <BeerCategory 
           name = {GetBeerDataArr()[0].name}
-          items = {GetBeerDataArr()[0].items}
+          Kegs = {GetBeerDataArr()[0].Kegs}
         isAuthed = {true}
         />}/>
         <Route exact path='/summer' 
-        render = {(props) => <Beers 
+        render = {(props) => <BeerCategory 
           name = {GetBeerDataArr()[1].name}
-          items = {GetBeerDataArr()[1].items}
+          Kegs = {GetBeerDataArr()[1].Kegs}
         isAuthed = {true}
         />}/>
         <Route exact path='/fall' 
-        render = {(props) => <Beers 
+        render = {(props) => <BeerCategory 
           name = {GetBeerDataArr()[2].name}
-          items = {GetBeerDataArr()[2].items}
+          Kegs = {GetBeerDataArr()[2].Kegs}
         isAuthed = {true}
         />}/>
         <Route exact path='/winter' 
-        render = {(props) => <Beers 
+        render = {(props) => <BeerCategory 
           name = {GetBeerDataArr()[3].name}
-          items = {GetBeerDataArr()[3].items}
+          Kegs = {GetBeerDataArr()[3].Kegs}
         isAuthed = {true}
         />}/>
       </Switch>

@@ -1,10 +1,10 @@
 import React from 'react';
-import Beers from './Beers';
+import BeerCategory from './BeerCategory';
 import GetBeerDataArr from './Data';
 
 
-function BeersList() {
-    var BeersStyle =() => {
+function BeerCategoryList() {
+    var BeerCategoryStyle =() => {
         return {
            
         }
@@ -16,9 +16,9 @@ function BeersList() {
       {
           console.log(GetBeerDataArr())}
           {GetBeerDataArr().map((Beer, index) =>
-        <Beers name={Beer.name}
+        <BeerCategory name={Beer.name}
           // imgurl={Beer.imgurl}
-          items={Beer.items}
+          Kegs={Beer.Kegs}
           key={index}/>
                 
       )}
@@ -26,4 +26,4 @@ function BeersList() {
   );
 }
 
-export default BeersList;
+export default BeerCategoryList;
