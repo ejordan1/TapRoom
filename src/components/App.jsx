@@ -1,6 +1,5 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Schedule from './Schedule';
 import HomePage from './HomePage';
 import Header from './Header';
 import BeerCategoryList from './BeerCategoryList';
@@ -14,7 +13,6 @@ function App(){
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/BeerCategorylist' component={BeerCategoryList} />
-        <Route exact path='/schedule' component={Schedule} />
         <Route exact path='/spring' 
         render = {(props) => <BeerCategory 
           name = {GetBeerDataArr()[0].name}

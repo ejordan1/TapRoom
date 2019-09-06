@@ -1,5 +1,5 @@
 import React from 'react';
-import Kegs from './Kegs';
+import Kegs from './Keg';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
