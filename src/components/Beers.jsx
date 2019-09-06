@@ -3,7 +3,7 @@ import Items from './Items';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function Season(props){
+function Beer(props){
     var titleStyle = () => {
          fontSize : "30px"
     }
@@ -24,11 +24,11 @@ function Season(props){
   );
 }
 
-Season.PropTypes= {
+Beer.PropTypes= {
   name: PropTypes.string.isRequired,
   // imgurl: PropTypes.string,
   items: PropTypes.array
 };
 
 
-export default Season;
+export default Beer;

@@ -84,9 +84,9 @@ var Items = {
     
 };
 
-function GetSeasonData()
+function GetBeerData()
 { 
-    return SeasonData = {
+    return BeerData = {
     spring : {
         name: 'Spring',
         items: [Items.flowers, Items.tomato, Items.strawberries, Items.peach, Items.banana]
@@ -107,7 +107,7 @@ function GetSeasonData()
     };
 }
 
-function GetSeasonDataArr()
+function GetBeerDataArr()
 { 
     return [
     {
@@ -129,5 +129,5 @@ function GetSeasonDataArr()
 ]
 }
 
-// export default GetSeasonData;
-export default GetSeasonDataArr;
+// export default GetBeerData;
+export default GetBeerDataArr;

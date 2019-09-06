@@ -14,4 +14,4 @@ export default HomePage;
 
 
 //days at location
-//produce/season
+//produce/Beer
