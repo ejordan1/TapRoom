@@ -12,8 +12,11 @@ function Season(props){
       <Link style = {titleStyle()} to={`/${props.name}`}>{props.name}</Link> 
       {props.items.map((item, index) =>
         <Items name={item.name}
+          brand={item.brand}
+          alcoholContent={item.alcoholContent}
           price={item.price}
           imgurl={item.imgurl}
+          pintsLeft={item.pintsLeft}
           key={index}/>
                 
       )}
