@@ -4,7 +4,7 @@ import React from 'react';
 function HomePage(){
   return (
     <div>
-      <p>home page</p>
+      <p>Welcome to the tap room.</p>
     </div>
     
   );

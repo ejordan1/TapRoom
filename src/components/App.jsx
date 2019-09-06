@@ -6,12 +6,14 @@ import BeerCategoryList from './BeerCategoryList';
 import PropTypes from 'prop-types';
 import GetBeerDataArr from './Data';
 import BeerCategory from './BeerCategory';
+import Error404 from './Error404';
 function App(){
   return(
     <div>
       <Header/>
       <Switch>
         <Route exact path='/' component={HomePage} />
+        
         <Route exact path='/BeerCategorylist' component={BeerCategoryList} />
         <Route exact path='/spring' 
         render = {(props) => <BeerCategory 
@@ -37,6 +39,7 @@ function App(){
           Kegs = {GetBeerDataArr()[3].Kegs}
         isAuthed = {true}
         />}/>
+        <Route component={Error404} />
       </Switch>
     </div>
   );
