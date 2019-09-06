@@ -8,6 +8,7 @@
 
 _This is a website for managing and browsing beer keg inventories by beer category. _
 
+<img width="933" alt="Screen Shot 2019-09-06 at 12 32 47 PM" src="https://user-images.githubusercontent.com/20055988/64463048-74485200-d0b7-11e9-838f-171a0ea5c19d.png">
 
 
 ## Setup/Installation Requirements
