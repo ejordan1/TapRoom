@@ -15,25 +15,25 @@ function App(){
         <Route exact path='/' component={HomePage} />
         
         <Route exact path='/BeerCategorylist' component={BeerCategoryList} />
-        <Route exact path='/spring' 
+        <Route exact path='/lager' 
         render = {(props) => <BeerCategory 
           name = {GetBeerDataArr()[0].name}
           Kegs = {GetBeerDataArr()[0].Kegs}
         isAuthed = {true}
         />}/>
-        <Route exact path='/summer' 
+        <Route exact path='/ipa' 
         render = {(props) => <BeerCategory 
           name = {GetBeerDataArr()[1].name}
           Kegs = {GetBeerDataArr()[1].Kegs}
         isAuthed = {true}
         />}/>
-        <Route exact path='/fall' 
+        <Route exact path='/pale ale' 
         render = {(props) => <BeerCategory 
           name = {GetBeerDataArr()[2].name}
           Kegs = {GetBeerDataArr()[2].Kegs}
         isAuthed = {true}
         />}/>
-        <Route exact path='/winter' 
+        <Route exact path='/stout' 
         render = {(props) => <BeerCategory 
           name = {GetBeerDataArr()[3].name}
           Kegs = {GetBeerDataArr()[3].Kegs}
