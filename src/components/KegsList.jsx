@@ -2,20 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Keg from './Keg';
 
-class KegsList extends React.Component{
+const KegsList = (props) => {
 
-  constructor(props)
-  {
-    super(props);
-    this.state = {
-      confirmingDeleteNotEmptyKeg : false
-    }
-  }
-
-  render(){
     return (
       <div>
         <p>Welcome to the tap room. These are our kegs</p>
+        {console.log(props)}
         {Object.keys(props.kegs).map((kegId) => {
             let keg = props.kegs[kegId];
             return <Keg 
@@ -24,6 +16,7 @@ class KegsList extends React.Component{
             onRemovePintFromKeg = {props.onRemovePintFromKeg}
             onAddPintToKeg = {props.onAddPintToKeg}
             id = {kegId}
+            key = {kegId}
         
             />
         })}
@@ -33,13 +26,12 @@ class KegsList extends React.Component{
       
     );
   }
-}
 
 KegsList.propTypes = {
-    kegs = PropTypes.object,
-    onRemovePintFromKeg = PropTypes.func,
-    onAddPintToKeg = PropTypes.func
-  }
+    kegs : PropTypes.object,
+    onRemovePintFromKeg : PropTypes.func,
+    onAddPintToKeg : PropTypes.func
+}
   
 
 export default KegsList;

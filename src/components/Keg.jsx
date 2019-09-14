@@ -6,9 +6,11 @@ import BeerTypes from './Data';
 
 function Keg(props){
 
-  var getBeerTypeFromKey = (beerTypeKey) => 
+  console.log(" SDFSDF " + BeerTypes().Costco.name);
+
+  function getBeerTypeFromKey (beerTypeKey) 
   {
-    return BeerTypes[beerTypeKey];
+    return BeerTypes()[beerTypeKey];
   }
 
   var imgStyle = () => {
@@ -38,8 +40,9 @@ function Keg(props){
     };
   };
 
-  
+  console.log(props.beerType + ", is the BeER TYPE");
   return (
+    
     <div style = {kegStyle()}>
       <img style = {imgStyle()} src={props.imgurl} alt = {`img of ${props.name}`}/>
       <h4>{getBeerTypeFromKey(props.beerType).name}</h4>
@@ -55,8 +58,8 @@ function Keg(props){
 }
 
 Keg.PropTypes= {
-  id = PropTypes.string,
-  beerType = PropTypes.object, //how do this? how to pass beer type: string name or as object?
+  id : PropTypes.string,
+  beerType : PropTypes.string, //how do this? how to pass beer type: string name or as object?
   pintsLeft: PropTypes.number,
   onRemovingPintFromKeg: PropTypes.func,
   onAddingPintToKeg: PropTypes.func

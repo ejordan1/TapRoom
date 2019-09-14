@@ -1,29 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { Link } from "react-router-dom";
 const CreateKeg = (props) => {
     let _beerType = null;
     let _pintsLeft = 124;
 
     function handleNewKegFormSubmission(event)
-    {
+    {   
+        console.log("BEER TYPE IS:" + _beerType);
         event.preventdefault;
-        props.onNewKegAdd({ beerType = _beerType, pintsLeft = 124});
+        props.onNewKegAdd({ beerType : _beerType.value, pintsLeft : 124});
         _beerType.value = "";
-        _pintsLeft.value = "";
+       
     }
 
     return (
     <div>
         {/* ideally would be drop down */}
         <form onSubmit = {handleNewKegFormSubmission}>
-            <label htmlFor="BeerType">Beer</label>
+            <label htmlFor="BeerType">Beer Type: </label>
             <input
-                ref = {(input) => {beerType = input; } } 
+                ref = {(input) => {_beerType = input; } } 
                 id = "BeerType"
                 type= "text"
             />
-            
+            <button type="submit">Submit</button>
         </form>
         <hr />
       <Link to="/"><button>Back</button></Link>

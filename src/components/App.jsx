@@ -1,8 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import HomePage from './HomePage';
 import Header from './Header';
-import PropTypes from 'prop-types';
 import {Kegs, BeerTypes} from './Data';
 import Error404 from './Error404';
 import v4 from "UUID";
@@ -14,23 +12,22 @@ class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      kegs: Kegs,
+      kegs: {},
       beerTypes : BeerTypes
     }
     this.handleNewKeg = this.handleNewKeg.bind(this);
     this.handleDeleteKeg = this.handleDeleteKeg.bind(this);
     this.handleRemovePintFromKeg = this.handleRemovePintFromKeg.bind(this);
     this.handleAddPintToKeg = this.handleAddPintToKeg.bind(this);
-  }
-  render(){
+    }
 
     handleNewKeg(newKeg)
     {
       newKeg.timeBrewed = new Moment();
-      let kegsClone = this.state.kegs.slice();
-      let newKegKey = v4();
-      kegsClone.newKegKey = newKeg;
-      this.setState(kegsClone);
+      let newKegId = v4();
+      var newKegList = Object.assign({}, this.state.kegs, {[newKegId] : newKeg})
+      console.log(newKegList);
+      this.setState({kegs: newKegList});
     }
 
     handleDeleteKeg(kegId)
@@ -54,18 +51,24 @@ class App extends React.Component{
       this.setState(kegsClone);
     }
 
+
+  render(){
+
+    
   return(
     <div>
       <Header/>
       <Switch>
         {/* <Route exact path='/' component={HomePage} /> */}
         <Route exact path='/' render={()=> <KegsList 
-        Kegs = {this.state.kegs}
+        kegs = {this.state.kegs}
         onNewKeg = {this.handleNewKeg}
         onAddPintToKeg = {this.handleAddPintToKeg} 
         onRemovePintFromKeg= {this.handleRemovePintFromKeg}
         />}/>
-        <Route exact path='/newkeg' component = {AddNewKeg}/>
+        <Route exact path='/newkeg' render={() => <AddNewKeg 
+          onNewKegAdd = {this.handleNewKeg}
+        />}/>
         {/* <Route exact path='/lager' 
         render = {(props) => <BeerCategory 
           name = {GetBeerDataArr()[0].name}
