@@ -7,7 +7,7 @@ const CreateKeg = (props) => {
 
     function handleNewKegFormSubmission(event)
     {   
-        console.log("BEER TYPE IS:" + _beerType);
+        console.log("BEER TYPE IS:" + _beerType.value);
         event.preventdefault;
         props.onNewKegAdd({ beerType : _beerType.value, pintsLeft : 124});
         _beerType.value = "";

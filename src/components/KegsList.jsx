@@ -20,10 +20,7 @@ const KegsList = (props) => {
         
             />
         })}
-        
-
       </div>
-      
     );
   }
 

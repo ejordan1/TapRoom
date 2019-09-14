@@ -42,7 +42,7 @@ function Keg(props){
 
   console.log(props.beerType + ", is the BeER TYPE");
   return (
-    
+
     <div style = {kegStyle()}>
       <img style = {imgStyle()} src={props.imgurl} alt = {`img of ${props.name}`}/>
       <h4>{getBeerTypeFromKey(props.beerType).name}</h4>
@@ -50,8 +50,8 @@ function Keg(props){
       <h5>{getBeerTypeFromKey(props.beerType).alcoholContent}% ABV</h5>
       <p>{getBeerTypeFromKey(props.beerType).price}</p>
       <p>Pints Left: {props.pintsLeft}</p>
-      <button onClick={()=> {onRemovingPintFromKeg(props.kegId)}}>- Pint</button>
-      <button onClick={()=> {onRemovingPintFromKeg(props.kegId)}}>+ Pint</button>
+      <button onClick={()=> {props.onRemovePintFromKeg(props.kegId)}}>- Pint</button>
+      <button onClick={()=> {props.onAddPintToKeg(props.kegId)}}>+ Pint</button>
       
     </div>
   );
@@ -61,8 +61,8 @@ Keg.PropTypes= {
   id : PropTypes.string,
   beerType : PropTypes.string, //how do this? how to pass beer type: string name or as object?
   pintsLeft: PropTypes.number,
-  onRemovingPintFromKeg: PropTypes.func,
-  onAddingPintToKeg: PropTypes.func
+  onRemovePintFromKeg: PropTypes.func,
+  onAddPintToKeg: PropTypes.func
 };
 
 export default Keg;

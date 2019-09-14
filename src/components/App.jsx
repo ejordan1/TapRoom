@@ -30,18 +30,19 @@ class App extends React.Component{
       this.setState({kegs: newKegList});
     }
 
-    handleDeleteKeg(kegId)
-    {
-      let kegsClone = this.state.kegs.slice();
-      delete kegsClone.kegId;
-      this.setState(kegsClone);
-    }
+    // handleDeleteKeg(kegId)
+    // {
+    //   let kegsClone = this.state.kegs.slice();
+    //   delete kegsClone.kegId;
+    //   this.setState(kegsClone);
+    // }
 
     handleRemovePintFromKeg(kegId)
     {
-      let kegsClone = this.state.kegs.slice();
+      // let kegsClone = this.state.kegs.slice();
       kegsClone[kegId].pints--;
-      this.setState(kegsClone);
+      //for upvodte and downvote to work have to figure out how to copy and modify value of object
+      this.setState();
     }
 
     handleAddPintToKeg(kegId)
