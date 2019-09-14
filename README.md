@@ -1,6 +1,6 @@
 # _TapRoom_
 
-#### _This is a website for managing beer kegs_
+#### _This is a website for managing beer kegs built in React_
 
 #### By _**Emerson Jordan**_
 
@@ -8,7 +8,8 @@
 
 _This is a website for managing and browsing beer keg inventories by beer category. _
 
-<img width="933" alt="Screen Shot 2019-09-06 at 12 32 47 PM" src="https://user-images.githubusercontent.com/20055988/64463048-74485200-d0b7-11e9-838f-171a0ea5c19d.png">
+![Untitled Diagram](https://user-images.githubusercontent.com/20055988/64913414-a3cd0f00-d6f4-11e9-99c8-d357c65f3139.png)
+
 
 
 ## Setup/Installation Requirements
