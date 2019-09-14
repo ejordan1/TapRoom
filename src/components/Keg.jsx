@@ -17,10 +17,10 @@ function Keg(props){
     return  {
       height: '150',
       width : '190',
-      border : "5px",
-      borderStyle : "solid",
-      color : "brown",
-      backgroundColor : "tan"
+      border : '5px',
+      borderStyle : 'solid',
+      color : 'brown',
+      backgroundColor : 'tan'
       
     };
   };
@@ -28,15 +28,15 @@ function Keg(props){
   var kegStyle = () => {
     return  {
             
-      border : "5px",
-      borderStyle : "solid",
-      borderColor: "brown",
-      color : "white",
-      width : "200px",
-      backgroundColor : "#b3814b",
-      display : "inline-block",
-      height: "400px",
-      margin : "5px"
+      border : '5px',
+      borderStyle : 'solid',
+      borderColor: 'brown',
+      color : 'white',
+      width : '200px',
+      backgroundColor : '#b3814b',
+      display : 'inline-block',
+      height: '400px',
+      margin : '5px'
     };
   };
 
@@ -50,8 +50,8 @@ function Keg(props){
       <p>{getBeerTypeFromKey(props.beerType).price}</p>
       
       <p>Pints Left: {props.pintsLeft}</p>
-      <button onClick={()=> {props.onRemovePintFromKeg(props.id)}}>- Pint</button>
-      <button onClick={()=> {props.onAddPintToKeg(props.id)}}>+ Pint</button>
+      <button onClick={()=> {props.onRemovePintFromKeg(props.id);}}>- Pint</button>
+      <button onClick={()=> {props.onAddPintToKeg(props.id);}}>+ Pint</button>
       
     </div>
   );
