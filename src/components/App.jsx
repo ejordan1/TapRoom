@@ -16,7 +16,6 @@ class App extends React.Component{
       beerTypes : BeerTypes
     }
     this.handleNewKeg = this.handleNewKeg.bind(this);
-    this.handleDeleteKeg = this.handleDeleteKeg.bind(this);
     this.handleRemovePintFromKeg = this.handleRemovePintFromKeg.bind(this);
     this.handleAddPintToKeg = this.handleAddPintToKeg.bind(this);
     }
@@ -39,17 +38,17 @@ class App extends React.Component{
 
     handleRemovePintFromKeg(kegId)
     {
-      // let kegsClone = this.state.kegs.slice();
-      kegsClone[kegId].pints--;
-      //for upvodte and downvote to work have to figure out how to copy and modify value of object
-      this.setState();
+  
+      let kegsClone = Object.assign({}, this.state.kegs);
+      kegsClone[kegId].pintsLeft--;
+      this.setState({kegs : kegsClone});
     }
 
     handleAddPintToKeg(kegId)
     {
-      let kegsClone = this.state.kegs.slice();
-      kegsClone[kegId].pints++;
-      this.setState(kegsClone);
+      let kegsClone = Object.assign({}, this.state.kegs);
+      kegsClone[kegId].pintsLeft++;
+      this.setState({kegs : kegsClone});
     }
 
 

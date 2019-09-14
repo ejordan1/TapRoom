@@ -10,6 +10,9 @@ function Keg(props){
 
   function getBeerTypeFromKey (beerTypeKey) 
   {
+    if (BeerTypes()[beerTypeKey] == null){
+      throw 'NO BEER OF THIS TYPE IN DATA';
+    }
     return BeerTypes()[beerTypeKey];
   }
 
@@ -50,8 +53,8 @@ function Keg(props){
       <h5>{getBeerTypeFromKey(props.beerType).alcoholContent}% ABV</h5>
       <p>{getBeerTypeFromKey(props.beerType).price}</p>
       <p>Pints Left: {props.pintsLeft}</p>
-      <button onClick={()=> {props.onRemovePintFromKeg(props.kegId)}}>- Pint</button>
-      <button onClick={()=> {props.onAddPintToKeg(props.kegId)}}>+ Pint</button>
+      <button onClick={()=> {props.onRemovePintFromKeg(props.id)}}>- Pint</button>
+      <button onClick={()=> {props.onAddPintToKeg(props.id)}}>+ Pint</button>
       
     </div>
   );
