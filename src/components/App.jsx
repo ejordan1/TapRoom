@@ -25,16 +25,8 @@ class App extends React.Component{
       newKeg.timeBrewed = new Moment();
       let newKegId = v4();
       var newKegList = Object.assign({}, this.state.kegs, {[newKegId] : newKeg})
-      console.log(newKegList);
       this.setState({kegs: newKegList});
     }
-
-    // handleDeleteKeg(kegId)
-    // {
-    //   let kegsClone = this.state.kegs.slice();
-    //   delete kegsClone.kegId;
-    //   this.setState(kegsClone);
-    // }
 
     handleRemovePintFromKeg(kegId)
     {
@@ -59,7 +51,6 @@ class App extends React.Component{
     <div>
       <Header/>
       <Switch>
-        {/* <Route exact path='/' component={HomePage} /> */}
         <Route exact path='/' render={()=> <KegsList 
         kegs = {this.state.kegs}
         onNewKeg = {this.handleNewKeg}
@@ -69,30 +60,6 @@ class App extends React.Component{
         <Route exact path='/newkeg' render={() => <AddNewKeg 
           onNewKegAdd = {this.handleNewKeg}
         />}/>
-        {/* <Route exact path='/lager' 
-        render = {(props) => <BeerCategory 
-          name = {GetBeerDataArr()[0].name}
-          Kegs = {GetBeerDataArr()[0].Kegs}
-        isAuthed = {true}
-        />}/>
-        <Route exact path='/ipa' 
-        render = {(props) => <BeerCategory 
-          name = {GetBeerDataArr()[1].name}
-          Kegs = {GetBeerDataArr()[1].Kegs}
-        isAuthed = {true}
-        />}/>
-        <Route exact path='/pale ale' 
-        render = {(props) => <BeerCategory 
-          name = {GetBeerDataArr()[2].name}
-          Kegs = {GetBeerDataArr()[2].Kegs}
-        isAuthed = {true}
-        />}/>
-        <Route exact path='/stout' 
-        render = {(props) => <BeerCategory 
-          name = {GetBeerDataArr()[3].name}
-          Kegs = {GetBeerDataArr()[3].Kegs}
-        isAuthed = {true}
-        />}/> */}
         <Route component={Error404} />
       </Switch>
     </div>

@@ -1,19 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BeerTypes from './Data';
+import GetBeerTypes from './Data';
 
 
 
 function Keg(props){
-
-  console.log(" SDFSDF " + BeerTypes().Costco.name);
-
   function getBeerTypeFromKey (beerTypeKey) 
   {
-    if (BeerTypes()[beerTypeKey] == null){
+    if (GetBeerTypes()[beerTypeKey] == null){
       throw 'NO BEER OF THIS TYPE IN DATA';
     }
-    return BeerTypes()[beerTypeKey];
+    return GetBeerTypes()[beerTypeKey];
   }
 
   var imgStyle = () => {
@@ -43,15 +40,15 @@ function Keg(props){
     };
   };
 
-  console.log(props.beerType + ", is the BeER TYPE");
   return (
 
     <div style = {kegStyle()}>
-      <img style = {imgStyle()} src={props.imgurl} alt = {`img of ${props.name}`}/>
+      <img style = {imgStyle()} src={getBeerTypeFromKey(props.beerType).imgurl} alt = {`img of ${props.name}`}/>
       <h4>{getBeerTypeFromKey(props.beerType).name}</h4>
       <h5>{getBeerTypeFromKey(props.beerType).brand}</h5>
       <h5>{getBeerTypeFromKey(props.beerType).alcoholContent}% ABV</h5>
       <p>{getBeerTypeFromKey(props.beerType).price}</p>
+      
       <p>Pints Left: {props.pintsLeft}</p>
       <button onClick={()=> {props.onRemovePintFromKeg(props.id)}}>- Pint</button>
       <button onClick={()=> {props.onAddPintToKeg(props.id)}}>+ Pint</button>
@@ -62,7 +59,7 @@ function Keg(props){
 
 Keg.PropTypes= {
   id : PropTypes.string,
-  beerType : PropTypes.string, //how do this? how to pass beer type: string name or as object?
+  beerType : PropTypes.string, 
   pintsLeft: PropTypes.number,
   onRemovePintFromKeg: PropTypes.func,
   onAddPintToKeg: PropTypes.func

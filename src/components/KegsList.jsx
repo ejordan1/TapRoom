@@ -4,10 +4,18 @@ import Keg from './Keg';
 
 const KegsList = (props) => {
 
+    function showNoKegsInfo()
+    {
+      if (Object.keys(props.kegs).length === 0){
+        return <p>There are currently no kegs. Head over to add new keg to add a keg.</p>
+      }
+    }
     return (
       <div>
-        <p>Welcome to the tap room. These are our kegs</p>
-        {console.log(props)}
+        <p>Welcome to the tap room.</p>
+        
+        {showNoKegsInfo()}
+        
         {Object.keys(props.kegs).map((kegId) => {
             let keg = props.kegs[kegId];
             return <Keg 
