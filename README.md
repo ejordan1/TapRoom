@@ -1,6 +1,6 @@
 # _TapRoom_
 
-#### _This is a website for managing beer kegs_
+#### _This is a website for managing beer kegs built in React_
 
 #### By _**Emerson Jordan**_
 
