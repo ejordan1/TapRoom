@@ -21,7 +21,7 @@ _This is a website for managing and browsing beer keg inventories by beer catego
 
 ## Support and contact details
 
-_If there are unknown bugs please contact Emerson at emerz21@gmail.com_
+_If there are unknown bugs please contact Emerson at emerz210@gmail.com_
 
 ## Technologies Used
 
